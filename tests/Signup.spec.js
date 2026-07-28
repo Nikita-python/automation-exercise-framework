@@ -1,7 +1,7 @@
 import {test,expect} from '@playwright/test'
 import { SignupPage } from '../Pages/SignupPage';
 import { faker } from '@faker-js/faker';
-import SignupData from './Fixtures/SignupData.json' assert { type: 'json' };
+import SignupData from '../Fixtures/SignupData.json' assert { type: 'json' };
 
 test('Signup',async({page})=>{
     const signupPage = new SignupPage(page);
