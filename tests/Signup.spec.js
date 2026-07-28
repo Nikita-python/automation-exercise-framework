@@ -1,7 +1,7 @@
 import {test,expect} from '@playwright/test'
 import { SignupPage } from '../Pages/SignupPage';
 import { faker } from '@faker-js/faker';
-import signupData from '../Fixtures/signupData.json' assert { type: 'json' };
+import SignupData from './Fixtures/SignupData.json' assert { type: 'json' };
 
 test('Signup',async({page})=>{
     const signupPage = new SignupPage(page);
@@ -17,7 +17,7 @@ password: faker.internet.password({ length: 8 }),
         zipcode: faker.location.zipCode(),
         mobileNumber: faker.phone.number()
     }
-    const fixedData = signupData.validuser;
+    const fixedData = SignupData.validuser;
     //Go To Signup page 
 await signupPage.goto();
 await expect(page.getByText('New User Signup!')).toBeVisible();
